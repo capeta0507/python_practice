@@ -1,0 +1,2 @@
+要能夠使用python需安裝python語法
+https://www.python.org/downloads/
