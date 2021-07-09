@@ -14,5 +14,11 @@ b = "World"
 print(a, b)
 # str
 print(str(a) + str(b))
-date="大作戰"
-print("約會" + str(date))
+
+date="約會"
+live="大作戰"
+
+print("約會" + live)
+print(date + live)
+print("約會" + str(live))
+print(str(date) + str(live))
