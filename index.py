@@ -3,9 +3,16 @@
 # 第一支程式
 # 撰寫程式檔案：副檔名用py
 # 執行程式：python 檔案名稱
-print("Hello python 2")
 
-a = "Hello"
+# str() 若兩個變數結合，字串與變數結合需使用str()
+print("Hello python 2")
+print("Hello python 教學")
+
+a = "Hello "
 b = "World"
 
 print(a, b)
+# str
+print(str(a) + str(b))
+date="大作戰"
+print("約會" + str(date))
