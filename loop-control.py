@@ -9,7 +9,7 @@
 #         break
 #     print(n) # 印出迴圈中的n
 #     n+=1
-# print("final n:", n) # 印出迴圈結束後的n
+# print("最後的 n: " + str(n)) # 印出迴圈結束後的n
 
 # continue 的簡易範例
 # n=0
@@ -18,7 +18,7 @@
 #         continue
 #     print(x)
 #     n+=1
-# print("final n:", n) # 印出迴圈結束後的n
+# print("最後的 n: " + str(n)) # 印出迴圈結束後的n
 
 # else 的簡易範例
 # sum=0
