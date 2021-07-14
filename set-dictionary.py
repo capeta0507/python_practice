@@ -24,14 +24,14 @@ import json
 # print(dic["apple"])
 dic={"apple":"蘋果", "bug":"蟲蟲"}
 # print("test" not in dic) # 判斷 key 是否存在
-# print(dic) # 這樣呈現中文會無法正常顯示
-result_dic = json.dumps(dic, encoding='UTF-8', ensure_ascii=False) # 將中文進行json格式轉換
-print(result_dic)
+print(dic) # 這樣呈現中文會無法正常顯示(python 2)
+# result_dic = json.dumps(dic, encoding='UTF-8', ensure_ascii=False) # python 2 需將中文進行json格式轉換
+# print(result_dic)
 
 del dic["apple"] # 刪除字典中的鍵值對 (key-value pair)
-# print(dic)
-result_dic = json.dumps(dic, encoding='UTF-8', ensure_ascii=False) # 將中文進行json格式轉換
+print(dic)
+# result_dic = json.dumps(dic, encoding='UTF-8', ensure_ascii=False) # python 2 需將中文進行json格式轉換
 
-print(result_dic)
+# print(result_dic)
 # dic={x:x*2 for x in [3,4,5]} # 從列表的資料產生字典
 # print(dic)

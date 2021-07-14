@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# str() 若兩個變數結合，字串與變數結合需使用str()
+# str() 若兩個變數結合，字串與變數結合需使用str() python 2
 
 # break 的簡易範例
 # n=0
@@ -34,7 +34,8 @@ n=input("輸入一個正整數：")
 n=int(n) # 轉換輸入成數字
 for i in range(n): # i 從 0 ~ n-1
     if i*i==n:
-        print("整數平方根: " + str(i))
+        print("整數平方根: " + str(i)) # python 2
+        print("整數平方根:", i) # python 3
         break # 用 break 強制結束回圈時，不會執行else區塊
 else:
     print("沒有整數平方根")
