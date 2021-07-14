@@ -8,6 +8,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 import urllib.request as req
 # import urllib
+# https://www.kkday.com/zh-tw/product/productlist?cat=TAG_2_1,TAG_2_2,TAG_2_3,TAG_2_4,TAG_2_6&sort=prec
 url="https://www.kkday.com/zh-tw/product/ajax_productlist/?country=&city=&keyword=&availstartdate=&availenddate=&cat=TAG_2_1%2CTAG_2_2%2CTAG_2_3%2CTAG_2_4%2CTAG_2_6&time=&glang=&sort=prec&page=1&row=10&fprice=*&eprice=*&precurrency=TWD&csrf_token_name=a02948a0c6fbb3c4c52aa2d08104f49c"
 # 建立一個 Request 物件，附加 Request Headers 的資訊
 request=req.Request(url, headers={
@@ -26,6 +27,6 @@ data=json.loads(data) # 把原始的 JSON 資料解析成字典/列表的表示�
 # 取得 JSON 資料中的文章標題
 posts=data["data"]
 # print(posts)
-for key in posts:
+for post in posts:
     # post=posts[key]
-    print(key["name"])
+    print(post["name"])
