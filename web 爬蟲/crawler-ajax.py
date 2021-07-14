@@ -26,6 +26,8 @@ data=json.loads(data) # 把原始的 JSON 資料解析成字典/列表的表示�
 # print(data)
 # 取得 JSON 資料中的文章標題
 posts=data["data"]["homepage_product_group"]
+# with open("config.json", mode="w") as file:
+#     json.dump(posts, file)
 # print(posts)
 for post in posts:
     # post=posts[key]

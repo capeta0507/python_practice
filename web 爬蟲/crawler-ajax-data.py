@@ -21,6 +21,9 @@ with req.urlopen(request) as response:
 # 解析 JSON 格式的資料，取得每篇文章的標題
 result=json.loads(result)
 items=result["data"]["extendedFeedItems"]
+# with open("config.json", mode="w") as file:
+#     json.dump(items, file)
+# print('items', items)
 # print(result["data"]["extendedFeedItems"][0]["post"]["title"]) # 試著印出第一篇文章的標題
 for item in items:
     print(item["post"]["title"])
