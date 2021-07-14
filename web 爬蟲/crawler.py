@@ -9,7 +9,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 import urllib.request as req
 # import urllib
 url="https://www.ptt.cc/bbs/FORMULA1/index.html"
-
+# 建立一個 Request 物件，附加 Request Headers 的資訊
 request=req.Request(url, headers={
     "User-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"
 })
