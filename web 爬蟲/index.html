@@ -7,6 +7,7 @@
   <title>kkdays 爬蟲</title>
 </head>
 <link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <body>
   <div class="container">
@@ -25,14 +26,29 @@
 <script>
   $(document).ready(function(){
     let travel = '';
-    let traval_data = ''
-    $.get("kkday.json", function(data, status){
-      // console.log(data)
-      traval_data = data
-      // for(let x = 0; x< data.length;x++){
-      //   console.log('data', data[x])
-      // }
-      data.map(data => {
+
+    // jquery ajax
+    // $.get("kkday.json", function(data, status){
+    //   // console.log(data)
+    //   data.map(data => {
+    //     travel += `
+    //     <div class="card">
+    //       <div class="img-card"><img src="${data.img_url}" alt=""></div>
+    //       <div class="card-body">
+    //         <div class="title">${data.name}</div>
+    //         <hr>
+    //         <div class="introduction">${data.introduction}</div>
+    //       </div>
+    //     </div>
+    //     `
+    //   })
+    //   $('#card_data').html(travel)
+    // })
+
+    // axios
+    axios.get("kkday.json").then(res => {
+      // console.log(res.data)
+      res.data.map(data => {
         travel += `
         <div class="card">
           <div class="img-card"><img src="${data.img_url}" alt=""></div>
@@ -45,6 +61,8 @@
         `
       })
       $('#card_data').html(travel)
+    }).catch(err => {
+      console.log(err);
     })
   })
 </script>
