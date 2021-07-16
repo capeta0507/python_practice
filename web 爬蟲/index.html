@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kkdays 爬蟲</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<body>
+  <div class="container">
+    <div id="card_data" class="flex_row">
+      <!-- <div class="card">
+        <div class="img-card"><img src="https://image.kkday.com/v2/image/get/w_600%2Cc_fit/s1.kkday.com/product_6370/20160314031055_kBV6H/jpg" alt=""></div>
+        <div class="card-body">
+          <div class="title">優惠65折】新竹六福村主題樂園門票 Leofoo Village</div>
+          <hr>
+          <div class="introduction">即訂購六福村門票，線上購票更優惠！在六福村遊客服務中心領取，不必排隊購票直接入場！玩遍笑傲飛鷹、大怒神、蒸氣火車、六福水樂園全台唯一冰凍滑道。</div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</body>
+<script>
+  $(document).ready(function(){
+    let travel = '';
+    let traval_data = ''
+    $.get("kkday.json", function(data, status){
+      // console.log(data)
+      traval_data = data
+      // for(let x = 0; x< data.length;x++){
+      //   console.log('data', data[x])
+      // }
+      data.map(data => {
+        travel += `
+        <div class="card">
+          <div class="img-card"><img src="${data.img_url}" alt=""></div>
+          <div class="card-body">
+            <div class="title">${data.name}</div>
+            <hr>
+            <div class="introduction">${data.introduction}</div>
+          </div>
+        </div>
+        `
+      })
+      $('#card_data').html(travel)
+    })
+  })
+</script>
+</html>
