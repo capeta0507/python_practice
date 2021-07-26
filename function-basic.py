@@ -10,7 +10,7 @@
 # multiply(10,3)
 # multiply(5,4)
 
-# 韓式可用來做程式的包裝: 同樣的邏輯可以重複利用
+# 函式可用來做程式的包裝: 同樣的邏輯可以重複利用
 def calculate(max):
     sum=0
     for n in range(1,max+1):
